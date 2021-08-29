@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My project #5</title>
+    <link rel="stylesheet" href="./style/main.css" />
+  </head>
+  <body>
+    <main>
+      <div id="score-con">
+        <div id="score-1" class="score">
+          <h2>Player 1</h2>
+          <h3>Score: <span id="score-p1">0</span></h3>
+        </div>
+        <div id="score-2" class="score">
+          <h2>Player 2</h2>
+          <h3>Score: <span id="score-p2">0</span></h3>
+        </div>
+      </div>
+      <div id="game-con">
+        <div id="play-sec">
+          <div id="game">
+            <div id="player">
+              <h1 id="player-name">Player 1</h1>
+              <div id="current-point">
+                <h2>Current piont</h2>
+                <h1 id="current">0</h1>
+              </div>
+            </div>
+            <div id="dice-con">
+              <div id="main-dice">
+                <div id="dice">
+                  <span data-points="2 3 4 5 6"></span>
+                  <span data-points="6"></span>
+                  <span data-points="4 5 6"></span>
+                  <span data-points=""></span>
+                  <span style="opacity: 1" data-points="1 3 5"></span>
+                  <span data-points=""></span>
+                  <span data-points="4 5 6"></span>
+                  <span data-points="6"></span>
+                  <span data-points="2 3 4 5 6"></span>
+                </div>
+              </div>
+              <div id="roller-con">
+                <h1 id="dice-point">0</h1>
+                <button id="roll-btn">Roll dice</button>
+                <button id="hold-btn" onclick="holder()">Hold</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="show-sec"></div>
+      </div>
+    </main>
+    <script type="text/javascript" src="./js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1333 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+body main {
+  height: 100%;
+  width: 100%;
+  background-color: #505050;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body main #game-banner {
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  background-color: #282828;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
+
+body main #game-banner.game-started {
+  left: -100%;
+}
+
+body main #game-banner h1 {
+  font-size: 50px;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 3px solid #1e1e1e;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+body main #game-banner .two-col {
+  height: 100%;
+  width: 100%;
+  background-color: #232323;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main #game-banner .two-col ul {
+  width: 50%;
+  padding: 50px;
+  padding-top: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+body main #game-banner .two-col ul li {
+  height: 50px;
+  width: 100%;
+  font-size: 20px;
+  line-height: 50px;
+  list-style: none;
+  border-radius: 5px;
+  background-color: #373737;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+}
+
+body main #game-banner .two-col ul li:hover {
+  background-color: #444444;
+}
+
+body main #game-banner .two-col ul #social {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 50px;
+}
+
+body main #game-banner .two-col ul #social div {
+  height: 50px;
+  width: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 5px;
+  background-color: #373737;
+  margin-left: 10px;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+}
+
+body main #game-banner .two-col ul #social div:hover {
+  background-color: #444444;
+}
+
+body main #game-banner .two-col #img-cont {
+  width: 50%;
+  background-color: #464646;
+  position: relative;
+}
+
+body main #game-banner .two-col #img-cont img {
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+
+body main #get-input-cont {
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  background-color: #282828;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
+
+body main #get-input-cont.game-started {
+  left: -100%;
+}
+
+body main #get-input-cont h1 {
+  font-size: 50px;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 3px solid #1e1e1e;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+body main #get-input-cont .two-col {
+  height: 100%;
+  width: 100%;
+  background-color: #232323;
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+body main #get-input-cont .two-col .player-input {
+  width: 50%;
+  border-radius: 0 10px 10px 0;
+  background-color: #3c3c3c;
+  padding: 50px;
+  position: relative;
+}
+
+body main #get-input-cont .two-col .player-input:first-child {
+  border-radius: 10px 0 0 10px;
+  background-color: #323232;
+}
+
+body main #get-input-cont .two-col .player-input h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+body main #get-input-cont .two-col .player-input .name {
+  margin-top: 15px;
+}
+
+body main #get-input-cont .two-col .player-input .name input {
+  height: 30px;
+  width: 250px;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background: #5a5a5a;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+body main #get-input-cont .two-col .player-input .name input::-webkit-input-placeholder {
+  color: #c8c8c8;
+}
+
+body main #get-input-cont .two-col .player-input .name input:-ms-input-placeholder {
+  color: #c8c8c8;
+}
+
+body main #get-input-cont .two-col .player-input .name input::-ms-input-placeholder {
+  color: #c8c8c8;
+}
+
+body main #get-input-cont .two-col .player-input .name input::placeholder {
+  color: #c8c8c8;
+}
+
+body main #get-input-cont .two-col .player-input .color {
+  margin-top: 15px;
+}
+
+body main #get-input-cont .two-col .player-input .color .container {
+  margin-top: 10px;
+  display: block;
+}
+
+body main #get-input-cont .two-col .player-input .color .container span {
+  height: 40px;
+  width: 40px;
+  margin-left: 3px;
+  opacity: 0.7;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+body main #get-input-cont .two-col .player-input .color .container span:hover {
+  opacity: 1;
+}
+
+body main #get-input-cont .two-col .player-input .color .container span.selected-p1, body main #get-input-cont .two-col .player-input .color .container span.selected-p2 {
+  display: none;
+}
+
+body main #get-input-cont .two-col .player-input .color .container span.red {
+  background-color: #ff1414;
+}
+
+body main #get-input-cont .two-col .player-input .color .container span.yellow {
+  background-color: #ebb900;
+}
+
+body main #get-input-cont .two-col .player-input .color .container span.green {
+  background-color: #007800;
+}
+
+body main #get-input-cont .two-col .player-input .color .container span.blue {
+  background-color: #1441ff;
+}
+
+body main #get-input-cont .two-col .player-input .color .container span.deeppink {
+  background-color: #fa0a87;
+}
+
+body main #get-input-cont .two-col .player-input .color .container span.darkviolet {
+  background-color: #8c00a0;
+}
+
+body main #get-input-cont .two-col .player-input .color .container span.white {
+  background-color: #e6e6e6;
+}
+
+body main #get-input-cont .two-col .player-input .color .container span.black {
+  background-color: #1e1e1e;
+}
+
+body main #get-input-cont .two-col .player-input .car {
+  margin-top: 15px;
+}
+
+body main #get-input-cont .two-col .player-input .car .container {
+  margin-top: 10px;
+  display: block;
+}
+
+body main #get-input-cont .two-col .player-input .car .container span {
+  height: 100px;
+  width: 70px;
+  border-radius: 5px;
+  background-color: #505050;
+  background-size: 60% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  display: inline-block;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+}
+
+body main #get-input-cont .two-col .player-input .car .container span:hover {
+  background-color: #838383;
+}
+
+body main #get-input-cont .two-col .player-input .car .container span.selected {
+  background-color: #838383;
+  cursor: auto;
+}
+
+body main #get-input-cont .two-col .player-input .car .container span.car-style-1 {
+  background-image: url("/img/white-cars/car-style-1.svg");
+}
+
+body main #get-input-cont .two-col .player-input .car .container span.car-style-2 {
+  background-image: url("/img/car-style-2.svg");
+}
+
+body main #get-input-cont .two-col .player-input .car .container span.car-style-3 {
+  background-image: url("/img/black-cars/car-style-3.svg");
+}
+
+body main #get-input-cont .two-col .player-input .preview {
+  margin-top: 20px;
+}
+
+body main #get-input-cont .two-col .player-input .preview img {
+  height: 50px;
+  width: 50px;
+  border-radius: 3px;
+  background-color: blue;
+  padding: 5px;
+  margin-right: 20px;
+}
+
+body main #get-input-cont .two-col .player-input:first-child .preview img {
+  background-color: red;
+}
+
+body main #get-input-cont .two-col #get-identity-btn {
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  border-radius: 5px;
+  color: white;
+  background-color: #c32323;
+  padding: 0 30px;
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  cursor: pointer;
+}
+
+body main #get-input-cont .two-col #get-identity-btn:hover {
+  background-color: #d92c2c;
+}
+
+body main #win-board {
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  background-color: #282828;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  z-index: 10;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
+
+body main #win-board.game-finished {
+  left: 0;
+}
+
+body main #win-board .img {
+  height: 120px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border: 1px solid #0f0f0f;
+  border-radius: 60px;
+  background-color: #1e1e1e;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 30px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+body main #win-board .img img {
+  height: 100%;
+}
+
+body main #win-board h1 {
+  font-size: 35px;
+  text-align: center;
+  margin: 15px 0 20px 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+body main #win-board .two-col {
+  height: 100%;
+  width: 100%;
+  border-top: 3px solid #1e1e1e;
+  background-color: #232323;
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main #win-board .two-col ul {
+  width: 50%;
+  padding: 50px;
+  padding-top: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+body main #win-board .two-col ul li {
+  height: 50px;
+  width: 100%;
+  font-size: 20px;
+  line-height: 50px;
+  list-style: none;
+  border-radius: 5px;
+  background-color: #373737;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+}
+
+body main #win-board .two-col ul li:hover {
+  background-color: #444444;
+}
+
+body main #win-board .two-col #result-cont {
+  width: 50%;
+  border-radius: 10px;
+  background-color: #373737;
+  padding: 30px 20px;
+}
+
+body main #win-board .two-col #result-cont h2 {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+body main #win-board .two-col #result-cont div {
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #282828;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main #win-board .two-col #result-cont div p {
+  font-size: 20px;
+}
+
+body main #win-board .two-col #result-cont div p:last-child {
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main #win-board .two-col #result-cont div p:last-child span {
+  width: 80px;
+  font-size: 22px;
+  color: gold;
+  padding-left: 5px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: inline-block;
+}
+
+body main #point-con {
+  height: clamp(60px, 12vh, 80px);
+  border-bottom: 3px solid #1e1e1e;
+  color: white;
+  background-color: #323232;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  z-index: 5;
+}
+
+body main #point-con .container {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+body main #point-con .container .point {
+  height: 100%;
+  width: 50%;
+  padding-left: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main #point-con .container .point#point-1 {
+  border-right: 5px solid #1e1e1e;
+}
+
+body main #point-con .container .point .profile {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main #point-con .container .point .profile img {
+  height: clamp(40px, 10vh, 60px);
+  width: clamp(40px, 10vh, 60px);
+  border-radius: 3px;
+  background-color: #464646;
+  padding: 5px;
+  margin-right: 20px;
+}
+
+body main #point-con .container .point .profile h2 {
+  font-size: 30px;
+}
+
+body main #point-con .container .point .points {
+  width: 50%;
+  border-left: 2px solid #646464;
+  padding-left: 20px;
+}
+
+body main #point-con .container .point .points h3 {
+  width: 100%;
+  color: #c8c8c8;
+}
+
+body main #point-con .container .point .points h3:first-child {
+  margin-bottom: 5px;
+}
+
+body main #point-con .container .point .points h3 span {
+  color: white;
+}
+
+body main #point-con #push-game-cont {
+  height: 100%;
+  width: clamp(60px, 12vh, 80px);
+  padding: 16px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+body main #point-con #push-game-cont #push-btn {
+  height: 100%;
+  width: 100%;
+  background-image: url("/img/push-button.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.6;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+}
+
+body main #point-con #push-game-cont #push-btn:hover {
+  opacity: 1;
+}
+
+body main #point-con #push-game-cont #push-game {
+  height: 100vh;
+  width: 100vw;
+  background-color: #282828;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 9;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
+
+body main #point-con #push-game-cont #push-game.game-pushed {
+  left: 0;
+}
+
+body main #point-con #push-game-cont #push-game h1 {
+  font-size: 50px;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 3px solid #1e1e1e;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+body main #point-con #push-game-cont #push-game .two-col {
+  height: 100%;
+  width: 100%;
+  background-color: #232323;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main #point-con #push-game-cont #push-game .two-col ul {
+  width: 50%;
+  padding: 50px;
+  padding-top: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+body main #point-con #push-game-cont #push-game .two-col ul li {
+  height: 50px;
+  width: 100%;
+  font-size: 20px;
+  line-height: 50px;
+  list-style: none;
+  border-radius: 5px;
+  background-color: #373737;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+}
+
+body main #point-con #push-game-cont #push-game .two-col ul li:hover {
+  background-color: #444444;
+}
+
+body main #point-con #push-game-cont #push-game .two-col .img {
+  width: 50%;
+  background-color: #464646;
+  position: relative;
+}
+
+body main #point-con #push-game-cont #push-game .two-col .img img {
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+
+body main #game-con {
+  height: 100%;
+  width: 100%;
+  padding-top: clamp(60px, 12vh, 80px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+}
+
+body main #game-con #play-sec {
+  height: 100%;
+  width: clamp(470px, 40%, 570px);
+  border-right: 5px solid #373737;
+  background-color: #1e1e1e;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main #game-con #play-sec #game {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main #game-con #play-sec #game #player {
+  height: 100%;
+  width: 100%;
+  color: white;
+  padding-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+body main #game-con #play-sec #game #player .profile {
+  padding: 0 clamp(20px, 5vw, 50px);
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main #game-con #play-sec #game #player .profile img {
+  height: 50px;
+  width: 50px;
+  border-radius: 4px;
+  padding: 4px;
+  margin-right: 15px;
+}
+
+body main #game-con #play-sec #game #player .profile #h1 {
+  font-size: clamp(25px, 5vw, 40px);
+}
+
+body main #game-con #play-sec #game #player #current-point {
+  width: 100%;
+  padding: 0 clamp(20px, 5vw, 50px);
+}
+
+body main #game-con #play-sec #game #player #current-point h2 {
+  font-size: clamp(18px, 3vw, 26px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main #game-con #play-sec #game #player #current-point h2 #current {
+  font-size: clamp(40px, 5vw, 50px);
+  color: gold;
+  padding-left: 20px;
+}
+
+body main #game-con #play-sec #game #player #extra {
+  width: 100%;
+  background-color: rgba(60, 60, 60, 0.5);
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main #game-con #play-sec #game #player #extra p {
+  height: 100%;
+  width: 50%;
+  color: #c8c8c8;
+  padding-left: clamp(20px, 5vw, 50px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main #game-con #play-sec #game #player #extra p:first-child {
+  border-right: 3px solid #1e1e1e;
+}
+
+body main #game-con #play-sec #game #player #extra p span {
+  font-size: clamp(18px, 3vw, 26px);
+  font-weight: bold;
+  color: white;
+  padding-left: 10px;
+}
+
+body main #game-con #play-sec #game #player #extra-power {
+  width: 100%;
+  padding: 10px clamp(20px, 5vw, 50px);
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body main #game-con #play-sec #game #player #extra-power button {
+  height: 42px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  color: white;
+  padding: 0 20px;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+}
+
+body main #game-con #play-sec #game #player #extra-power button#gear {
+  background-color: #238700;
+}
+
+body main #game-con #play-sec #game #player #extra-power button#gear.active {
+  background-color: #185e00;
+  cursor: auto;
+}
+
+body main #game-con #play-sec #game #player #extra-power button#gear:hover {
+  background-color: #185e00;
+}
+
+body main #game-con #play-sec #game #player #extra-power button#nitro {
+  background-color: #0078b4;
+}
+
+body main #game-con #play-sec #game #player #extra-power button#nitro.active {
+  background-color: #005d8b;
+  cursor: auto;
+}
+
+body main #game-con #play-sec #game #player #extra-power button#nitro:hover {
+  background-color: #005d8b;
+}
+
+body main #game-con #play-sec #game #player #upgrade {
+  height: 100px;
+  width: 100%;
+  background-color: #373737;
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: absolute;
+  bottom: 0;
+}
+
+body main #game-con #play-sec #game #player #upgrade::before {
+  content: "🛠";
+  height: 30px;
+  width: 80px;
+  font-size: 25px;
+  text-align: center;
+  border-top-right-radius: 10px;
+  color: #c8c8c8;
+  background-color: #373737;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -30px;
+}
+
+body main #game-con #play-sec #game #player #upgrade div {
+  height: 100%;
+  width: 30%;
+  border-radius: 5px;
+  background-color: #505028;
+  padding: 10px;
+  position: relative;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+}
+
+body main #game-con #play-sec #game #player #upgrade div.max {
+  background-color: #737333;
+  cursor: auto;
+}
+
+body main #game-con #play-sec #game #player #upgrade div:hover {
+  background-color: #737333;
+}
+
+body main #game-con #play-sec #game #player #upgrade div:hover p span {
+  color: white;
+}
+
+body main #game-con #play-sec #game #player #upgrade div::before {
+  content: "";
+  height: 100%;
+  width: 60%;
+  font-size: 25px;
+  text-align: center;
+  opacity: 0.15;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+body main #game-con #play-sec #game #player #upgrade div#engine-update::before {
+  background: url("/img/car-engine.svg") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+body main #game-con #play-sec #game #player #upgrade div#gear-update::before {
+  background: url("/img/gearbox.svg") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+body main #game-con #play-sec #game #player #upgrade div#nitro-update::before {
+  background: url("/img/nitro-cylinder.svg") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+body main #game-con #play-sec #game #player #upgrade div p {
+  position: relative;
+}
+
+body main #game-con #play-sec #game #player #upgrade div p span {
+  font-size: 16px;
+  color: #c8c8c8;
+  padding-top: 10px;
+  display: block;
+}
+
+body main #game-con #play-sec #game #player #upgrade div p span::first-letter {
+  font-size: 25px;
+  font-weight: bold;
+  color: gold;
+}
+
+body main #game-con #play-sec #game #dice-con {
+  width: 100%;
+  border-top: 3px solid rgba(30, 30, 30, 0.5);
+  background-color: rgba(55, 55, 55, 0.5);
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main #game-con #play-sec #game #dice-con #main-dice {
+  padding: 38px;
+  padding-right: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main #game-con #play-sec #game #dice-con #main-dice #dice {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+body main #game-con #play-sec #game #dice-con #main-dice #dice span {
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background-color: #ff3c3c;
+  margin: 8px;
+  opacity: 0;
+  display: block;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+body main #game-con #play-sec #game #dice-con #roller-con {
+  border-left: 2px solid #191919;
+  padding-left: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main #game-con #play-sec #game #dice-con #roller-con #dice-point {
+  font-size: clamp(30px, 4vw, 40px);
+  color: white;
+  margin-bottom: clamp(8px, 3vw, 15px);
+}
+
+body main #game-con #play-sec #game #dice-con #roller-con #roll-btn,
+body main #game-con #play-sec #game #dice-con #roller-con #hold-btn {
+  height: 42px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  color: white;
+  padding: 0 50px;
+  display: block;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+}
+
+body main #game-con #play-sec #game #dice-con #roller-con #roll-btn {
+  color: #c32323;
+  background-color: #c8c8c8;
+  margin-bottom: 10px;
+}
+
+body main #game-con #play-sec #game #dice-con #roller-con #roll-btn:hover {
+  background-color: white;
+}
+
+body main #game-con #play-sec #game #dice-con #roller-con #hold-btn {
+  background-color: #c32323;
+  margin-bottom: 15px;
+}
+
+body main #game-con #play-sec #game #dice-con #roller-con #hold-btn:hover {
+  background-color: #d92c2c;
+}
+
+body main #game-con #show-sec {
+  height: 100%;
+  width: 60%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+body main #game-con #show-sec #game-base {
+  height: 5000px;
+  width: 100%;
+  background-image: url("/img/grass-land.svg");
+  overflow: hidden;
+  position: relative;
+}
+
+body main #game-con #show-sec #game-base::before {
+  content: "";
+  height: 350px;
+  width: 100%;
+  border-bottom: 5px solid red;
+  background-image: url("/img/checked-pattern.png");
+  background-size: 100px;
+  background-position: bottom;
+  -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.6)), to(black));
+  -webkit-mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6), black);
+          mask-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.6)), to(black));
+          mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6), black);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+body main #game-con #show-sec #game-base::after {
+  content: "";
+  height: 250px;
+  width: 100%;
+  border-top: 5px solid #3700ff;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(80, 80, 80, 0.3)), to(transparent)), url("/img/checked-pattern.png");
+  background-image: linear-gradient(0deg, rgba(80, 80, 80, 0.3), transparent), url("/img/checked-pattern.png");
+  background-size: 100px;
+  background-position: top;
+  -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.3)));
+  -webkit-mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+          mask-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.3)));
+          mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+body main #game-con #show-sec #game-base .car-cont {
+  height: 200px;
+  width: 120px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  position: absolute;
+  bottom: 50px;
+  z-index: 1;
+}
+
+body main #game-con #show-sec #game-base .car-cont#player1-car {
+  left: 33%;
+}
+
+body main #game-con #show-sec #game-base .car-cont#player2-car {
+  right: 33%;
+}
+
+body main #game-con #show-sec #game-base .car-cont .car {
+  height: 100%;
+  width: 100%;
+  background-image: url("/img/car-style-2.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body main #game-con #show-sec #game-base .car-cont .car.red {
+  -webkit-filter: hue-rotate(0deg);
+          filter: hue-rotate(0deg);
+}
+
+body main #game-con #show-sec #game-base .car-cont .car.yellow {
+  -webkit-filter: hue-rotate(65deg) brightness(2.3);
+          filter: hue-rotate(65deg) brightness(2.3);
+}
+
+body main #game-con #show-sec #game-base .car-cont .car.green {
+  -webkit-filter: hue-rotate(110deg);
+          filter: hue-rotate(110deg);
+}
+
+body main #game-con #show-sec #game-base .car-cont .car.blue {
+  -webkit-filter: hue-rotate(240deg);
+          filter: hue-rotate(240deg);
+}
+
+body main #game-con #show-sec #game-base .car-cont .car.deeppink {
+  -webkit-filter: hue-rotate(325deg);
+          filter: hue-rotate(325deg);
+}
+
+body main #game-con #show-sec #game-base .car-cont .car.darkviolet {
+  -webkit-filter: hue-rotate(295deg) brightness(0.7) contrast(1.3);
+          filter: hue-rotate(295deg) brightness(0.7) contrast(1.3);
+}
+
+body main #game-con #show-sec #game-base .car-cont .car.white {
+  background-image: url("/img/white-cars/car-style-2.svg");
+  -webkit-filter: hue-rotate(0deg);
+          filter: hue-rotate(0deg);
+}
+
+body main #game-con #show-sec #game-base .car-cont .car.black {
+  background-image: url("/img/black-cars/car-style-2.svg");
+  -webkit-filter: hue-rotate(0deg);
+          filter: hue-rotate(0deg);
+}
+
+body main #game-con #show-sec #game-base .car-cont.active-nitro .nitro {
+  height: 70px;
+  width: 100%;
+  background-image: url("/img/nitro-fire.gif");
+  background-size: 110% 110%;
+  background-position: center 0;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -65px;
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  z-index: -1;
+}
+
+body main #game-con #show-sec #game-base #road {
+  height: 100%;
+  width: 35%;
+  background-image: url("/img/road.svg");
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+body main #game-con #show-sec #massage-cont {
+  height: 70px;
+  width: inherit;
+  -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, color-stop(25%, black), to(rgba(0, 0, 0, 0.1)));
+  -webkit-mask-image: linear-gradient(0deg, black 25%, rgba(0, 0, 0, 0.1) 100%);
+          mask-image: -webkit-gradient(linear, left bottom, left top, color-stop(25%, black), to(rgba(0, 0, 0, 0.1)));
+          mask-image: linear-gradient(0deg, black 25%, rgba(0, 0, 0, 0.1) 100%);
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: fixed;
+  z-index: 3;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+  opacity: 0;
+}
+
+body main #game-con #show-sec #massage-cont.show {
+  opacity: 1;
+}
+
+body main #game-con #show-sec #massage-cont p {
+  text-align: center;
+  color: white;
+  background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(black), to(transparent));
+  background-image: linear-gradient(90deg, transparent, black, transparent);
+  padding: 2px 0;
+  margin-top: 3px;
+}
+
+body main #game-con #show-sec #nitro-cont {
+  height: 50px;
+  width: inherit;
+  background-color: rgba(100, 100, 100, 0.5);
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+}
+
+body main #game-con #show-sec #nitro-cont h3 {
+  width: 40%;
+  text-align: right;
+  color: white;
+  margin-right: 15px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+body main #game-con #show-sec #nitro-cont #nitro-viewer {
+  height: 100%;
+  width: 150px;
+  border-radius: 50px;
+  background-color: rgba(30, 30, 30, 0.7);
+  overflow: hidden;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+body main #game-con #show-sec #nitro-cont #nitro-viewer #nitro-fuel {
+  height: 100%;
+  width: 0px;
+  background-color: #ffc832;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+body main #game-con #show-sec #nitro-cont #nitro-viewer #nitro-fuel.quick {
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+/*# sourceMappingURL=main.css.map */

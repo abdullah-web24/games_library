@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <title>Crazy killer || the chash of mind game</title>
+    <link rel="stylesheet" href="/style/main.css">
+</head>
+<body>
+    <div id="get_identity">
+        <div class="main_container">
+            <div class="get_name">
+                <div class="get_player">
+                    <p>Player 1</p>
+                    <input type="text" id="get_player_1" value="" placeholder="Name...">
+                </div>
+                <div class="get_player">
+                    <p>Player 2</p>
+                    <input type="text" id="get_player_2" value="" placeholder="Name...">
+                </div>
+            </div>
+            <button id="play_now">Play now</button>
+        </div>
+    </div>
+    <header>
+        <div class="game_name">
+            <h1>Death arena</h1>
+        </div>
+        <div class="score_bord">
+            <div class="player_score">
+                <div class="player_identity player_1_identity">
+                    <p>Player 1</p>
+                    <p class="player_name turn_player" id="player_1_name">
+                        player 1
+                    </p>
+                </div>
+                <div class="score" id="player_1_score">
+                    <p>0</p>
+                </div>
+            </div>
+            <div class="player_score">
+                <div class="score" id="player_2_score">
+                    <p>0</p>
+                </div>
+                <div class="player_identity player_2_identity">
+                    <p>player 2</p>
+                    <p class="player_name" id="player_2_name">
+                        player 2
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="main_box">
+            <div id="game_base">
+                <div class="row">
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place" id="player_1_key"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                </div>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col place corner_place"></div>
+                    <div class="col"></div>
+                    <div class="col place corner_place"></div>
+                    <div class="col"></div>
+                    <div class="col place corner_place"></div>
+                    <div class="col"></div>
+                    <div class="col place corner_place"></div>
+                    <div class="col"></div>
+                </div>
+                <div class="row">
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                </div>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col place corner_place"></div>
+                    <div class="col"></div>
+                    <div class="col place corner_place"></div>
+                    <div class="col"></div>
+                    <div class="col place corner_place"></div>
+                    <div class="col"></div>
+                    <div class="col place corner_place"></div>
+                    <div class="col"></div>
+                </div>
+                <div class="row">
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place" id="center"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                </div>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col place corner_place"></div>
+                    <div class="col"></div>
+                    <div class="col place corner_place"></div>
+                    <div class="col"></div>
+                    <div class="col place corner_place"></div>
+                    <div class="col"></div>
+                    <div class="col place corner_place"></div>
+                    <div class="col"></div>
+                </div>
+                <div class="row">
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                </div>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col place corner_place"></div>
+                    <div class="col"></div>
+                    <div class="col place corner_place"></div>
+                    <div class="col"></div>
+                    <div class="col place corner_place"></div>
+                    <div class="col"></div>
+                    <div class="col place corner_place"></div>
+                    <div class="col"></div>
+                </div>
+                <div class="row">
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place" id="player_2_key"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                    <div class="col"></div>
+                    <div class="col place"></div>
+                </div>
+            </div>
+    
+            <div class="player_1 item bs_1 b_s slayer"></div>
+            <div class="player_1 item bs_2 b_s slayer"></div>
+            <div class="player_1 item bs_3 b_s slayer"></div>
+            <div class="player_1 item bs_4 b_s slayer"></div>
+            <div class="player_1 item s_1 s_s slayer"></div>
+            <div class="player_1 item s_2 s_s slayer"></div>
+            <div class="player_1 item s_3 s_s slayer"></div>
+            <div class="player_1 item s_4 s_s slayer"></div>
+            
+    
+            <div class="item player_2 bs_1 b_s"></div>
+            <div class="item player_2 bs_2 b_s"></div>
+            <div class="item player_2 bs_3 b_s"></div>
+            <div class="item player_2 bs_4 b_s"></div>
+            <div class="item player_2 s_1 s_s"></div>
+            <div class="item player_2 s_2 s_s"></div>
+            <div class="item player_2 s_3 s_s"></div>
+            <div class="item player_2 s_4 s_s"></div>
+        </div>
+    </main>
+
+    <div id="winner_anounce">
+        <div class="main_container">
+            <p id="main_anounce">
+                Player 1 won !
+            </p>
+            <div class="result">
+                <div class="player_result">
+                    <p id="player_1_name_">player 1</p>
+                    <p id="player_1_result">8</p>
+                </div>
+                <div class="player_result">
+                    <p id="player_2_result">7</p>
+                    <p id="player_2_name_">player 2</p>
+                </div>
+            </div>
+            <button id="play_again">Play again</button>
+        </div>
+    </div>
+
+    <script src="/js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body main {
+  height: 100vh;
+  width: 100vw;
+  background-color: #505050;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body main #score-con {
+  height: clamp(60px, 12vh, 80px);
+  background-color: rgba(255, 255, 255, 0.7);
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main #score-con .score {
+  height: 100%;
+  width: 50%;
+}
+
+body main #score-con .score#score-1 {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+body main #game-con {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(85, 135, 130, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main #game-con #play-sec {
+  height: 100%;
+  width: clamp(470px, 40%, 570px);
+  background-color: rgba(50, 150, 150, 0.7);
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main #game-con #play-sec #game {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main #game-con #play-sec #game #player {
+  height: 100%;
+  width: 100%;
+  color: white;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main #game-con #play-sec #game #player #player-name {
+  font-size: clamp(22px, 4vw, 36px);
+  margin-bottom: 20px;
+}
+
+body main #game-con #play-sec #game #player #current-point {
+  width: 50%;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgba(120, 70, 120, 0.7);
+  padding: clamp(10px, 3vh, 20px) 0;
+}
+
+body main #game-con #play-sec #game #player #current-point h2 {
+  font-size: clamp(18px, 3vw, 26px);
+  margin-bottom: 10px;
+}
+
+body main #game-con #play-sec #game #player #current-point h1 {
+  font-size: clamp(40px, 6vw, 60px);
+}
+
+body main #game-con #play-sec #game #dice-con {
+  width: 100%;
+  background-color: rgba(45, 45, 45, 0.7);
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main #game-con #play-sec #game #dice-con #main-dice {
+  padding: 40px;
+  padding-right: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main #game-con #play-sec #game #dice-con #main-dice #dice {
+  height: 120px;
+  width: 120px;
+  border-radius: 10px;
+  background-color: white;
+  padding: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+body main #game-con #play-sec #game #dice-con #main-dice #dice span {
+  height: 12px;
+  width: 12px;
+  border-radius: 5px;
+  background-color: #ff3c3c;
+  margin: 10px;
+  opacity: 0;
+  display: block;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+body main #game-con #play-sec #game #dice-con #roller-con {
+  border-left: 2px solid rgba(0, 0, 0, 0.7);
+  padding-left: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main #game-con #play-sec #game #dice-con #roller-con #dice-point {
+  font-size: clamp(40px, 6vw, 60px);
+  color: white;
+  margin-bottom: clamp(8px, 3vw, 15px);
+}
+
+body main #game-con #play-sec #game #dice-con #roller-con #roll-btn,
+body main #game-con #play-sec #game #dice-con #roller-con #hold-btn {
+  height: 46px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  color: white;
+  padding: 0 50px;
+  display: block;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+body main #game-con #play-sec #game #dice-con #roller-con #roll-btn {
+  background-color: rgba(15, 15, 15, 0.7);
+  margin-bottom: 10px;
+}
+
+body main #game-con #play-sec #game #dice-con #roller-con #roll-btn:hover {
+  background-color: rgba(28, 28, 28, 0.7);
+}
+
+body main #game-con #play-sec #game #dice-con #roller-con #hold-btn {
+  background-color: #ff3c3c;
+  margin-bottom: 15px;
+}
+
+body main #game-con #play-sec #game #dice-con #roller-con #hold-btn:hover {
+  background-color: #ff5656;
+}
+
+body main #game-con #show-sec {
+  height: 100%;
+  width: 60%;
+  background-color: rgba(60, 60, 135, 0.7);
+}
+/*# sourceMappingURL=main.css.map */

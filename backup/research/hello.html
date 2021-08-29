@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello</title>
+    <style>
+      h1 {
+        color: green;
+      }
+      .st0 {
+        transition: 1s ease-in;
+      }
+      .st0:hover {
+        d: path(
+          "M232.05,224.17H263v-30.95c0,0,13.47,33.41,10.8,64.29l0.35,29.75l-21.05,17.87L225,288.38l-3.75-30.88c0,0-2.4-39.07,10.8-64.29V224.17z"
+        );
+      }
+    </style>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Hello world</h1>
+    <p>This is home page</p>
+
+    <svg
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 595.28 841.89"
+      style="enable-background: new 0 0 595.28 841.89"
+      xml:space="preserve"
+    >
+      <style type="text/css">
+        .st0 {
+          fill: #ed2024;
+        }
+      </style>
+      <path
+        class="st0"
+        d="M264.4,413.49c-123.81-234.52-136.9-48.81-136.9-48.81c-29.76-32.14-52.38-80.95-52.38-80.95
+	c-14.29-39.29,0-95.24,0-95.24c16.67-66.67,74.93-75,74.93-75l-26.12,47.62c-21.43,79.76,61.9,60.58,61.9,60.58l5.95-24.87
+	l19.05,19.05c20.24,13.1,27.3,0,27.3,0l0.08-17.86c-1.19-20.24,10.71-46.43,10.71-46.43v30.95h15.48c0,0,15.48,0,15.48,0v-30.95
+	c0,0,11.9,26.19,10.71,46.43l0.08,17.86c0,0,7.06,13.1,27.3,0l19.05-19.05l5.95,24.87c0,0,83.33,19.18,61.9-60.58l-26.12-47.62
+	c0,0,58.27,8.33,74.93,75c0,0,14.29,55.95,0,95.24c0,0-22.62,48.81-52.38,80.95C401.3,364.68,388.21,178.97,264.4,413.49z"
+      />
+    </svg>
+
+    <script>
+      const arrayObj = [
+        {
+          id: "a1",
+          value: 10,
+        },
+        {
+          id: "a2",
+          value: 10,
+        },
+        {
+          id: "a3",
+          value: 10,
+        },
+      ];
+      const string = "This is id: {%ID%} and this is value: {%VALUE%}.";
+
+      // const replaceTemplate = (template, data) => {
+      //   let output = template.replace(/{%ID%}/g, data.id);
+      //   console.log(output);
+      //   output = output.replace(/{%VALUE%}/g, data.value);
+      //   console.log(output);
+      //   return output;
+      // };
+
+      // console.log(arrayObj.map((element) => replaceTemplate(string, element)));
+
+      function findOdd(A) {
+        while (A.length !== 0) {
+          const number = A[0];
+          let odd = 0;
+
+          while (A.indexOf(number) !== -1) {
+            odd++;
+            A.splice(A.indexOf(number), 1);
+          }
+
+          if (odd % 2 !== 0) {
+            return number;
+          }
+        }
+      }
+
+      const obj = {
+        name: "Abdullah",
+        age: "14",
+      };
+      let template = "I am {%NAME%} and am {%AGE%} years old.";
+      const replaceTemplate = (template, data) => {
+        for (let eachData in data) {
+          const placeHolder = new RegExp(`{%${eachData.toUpperCase()}%}`, "g");
+          template = template.replace(placeHolder, data[eachData]);
+        }
+        return template;
+      };
+      // console.log(replaceTemplate(template, obj));
+
+      const arr = [10, 20, 30];
+      const mixerArr = function (arr) {
+        let template = "...";
+        for (let i = 0; i < arr.length; i++) {
+          template += ` ${arr[i]}°C in ${i + 1} days ...`;
+          if (i == arr.length - 1) template += ` ...`;
+        }
+        return template;
+      };
+      console.table(arr);
+      console.log(mixerArr(arr));
+    </script>
+  </body>
+</html>

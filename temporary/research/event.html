@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extra HTML</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        width: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        overflow: hidden;
+      }
+      h1,
+      h2 {
+        margin-bottom: 20px;
+      }
+      button {
+        border: none;
+        outline: none;
+      }
+      .hide {
+        display: none;
+      }
+      #popup {
+        height: 600px;
+        width: 800px;
+        border-radius: 10px;
+        color: white;
+        background-image: linear-gradient(
+          150deg,
+          rgb(49, 126, 42) -20%,
+          rgb(8, 153, 97) 60%,
+          rgb(26, 57, 104) 120%
+        );
+        box-shadow: 10px 10px 20px 2px rgba(109, 8, 153, 0.4);
+        padding: 50px;
+        margin: auto;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 15;
+      }
+      #back-fade {
+        height: 100vh;
+        width: 100vw;
+        background-image: linear-gradient(
+          rgba(107, 8, 66, 0.5),
+          rgba(109, 8, 153, 0.5),
+          rgba(25, 25, 165, 0.5)
+        );
+        backdrop-filter: blur(2px);
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+      #exit-button {
+        height: 30px;
+        width: 30px;
+        color: rgb(219, 61, 61);
+        cursor: pointer;
+
+        position: absolute;
+        top: 30px;
+        right: 30px;
+      }
+      .second-para {
+        margin-top: 10px;
+      }
+      #button-container {
+        margin: 20px;
+      }
+      .open-popup {
+        height: 36px;
+        border-radius: 4px;
+        color: white;
+        background-image: radial-gradient(
+          rgb(185, 41, 161) 30%,
+          rgb(123, 45, 175) 130%
+        );
+        padding: 0 20px;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="popup" class="hide">
+        <div id="exit-button">
+          <h1>X</h1>
+        </div>
+        <h2>This is pop up window</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
+          distinctio esse nemo similique nostrum, placeat obcaecati quas fugit
+          autem dolores tempora voluptate, facere in quos? Possimus mollitia
+          consectetur molestias laboriosam nihil doloribus obcaecati neque cum,
+          nam sequi quidem itaque a suscipit assumenda eaque ut officiis quis
+          exercitationem cumque culpa animi.
+        </p>
+        <p class="second-para">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
+          distinctio esse nemo similique nostrum, placeat obcaecati quas fugit
+          autem dolores tempora voluptate, facere in quos? Possimus mollitia
+          consectetur molestias laboriosam nihil doloribus obcaecati neque cum,
+          nam sequi quidem itaque a suscipit assumenda eaque ut officiis quis
+          exercitationem cumque culpa animi.
+        </p>
+      </div>
+      <div id="back-fade" class="hide"></div>
+      <div id="button-container">
+        <button class="open-popup">Open window</button>
+        <button class="open-popup">Open window</button>
+        <button class="open-popup">Open window</button>
+      </div>
+    </main>
+
+    <script>
+      // let string1 = "a 10 10, b 20 20, c 30 30, d 40 40, e 50 50";
+      // let string2 = "a 0 0, b 10 10, c 20 20";
+      // const transformer = function () {
+      //   const splitedStr1 = string1.split(",");
+      //   const splitedStr2 = string2.split(",");
+      //   splitedStr1.forEach(function (pice1, index1) {
+      //     const lastPice = pice1.split(" ");
+      //     splitedStr2.forEach(function (pice2, index2) {
+      //       if (pice2.includes(lastPice[0])) {
+      //         console.log(pice2);
+      //       }
+      //     });
+      //   });
+      // };
+      // transformer();
+
+      const PopupButton = document.querySelectorAll(".open-popup");
+      const popupWindow = document.querySelector("#popup");
+      const exitButton = document.querySelector("#exit-button");
+      const backFade = document.querySelector("#back-fade");
+
+      const showPopup = function () {
+        popupWindow.classList.remove("hide");
+        backFade.classList.remove("hide");
+      };
+      const hidePopup = function () {
+        popupWindow.classList.add("hide");
+        backFade.classList.add("hide");
+      };
+      PopupButton.forEach(function (button, index) {
+        button.addEventListener("click", showPopup);
+      });
+      exitButton.addEventListener("click", hidePopup);
+      backFade.addEventListener("click", hidePopup);
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && !popupWindow.classList.contains("hide")) {
+          hidePopup();
+        }
+      });
+    </script>
+  </body>
+</html>

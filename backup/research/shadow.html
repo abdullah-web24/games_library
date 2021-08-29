@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shadow</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        width: 100vw;
+        background-color: rgb(220, 220, 220);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        height: 300px;
+        width: 100px;
+        border-radius: 100px;
+        margin: 0 30px;
+      }
+      div.downset1 {
+        box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.1),
+          -10px -10px 10px rgb(255, 255, 255, 0.5),
+          inset -1px -1px 3px rgb(0, 0, 0, 0.2),
+          inset 1px 1px 3px rgb(255, 255, 255, 0.6),
+          inset -5px -5px 5px rgb(255, 255, 255, 0.5),
+          inset 5px 5px 5px rgb(0, 0, 0, 0.1);
+      }
+
+      div.upset1 {
+        box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.1),
+          -10px -10px 10px rgb(255, 255, 255, 0.3),
+          inset -3px -3px 5px rgb(0, 0, 0, 0.1),
+          inset 3px 3px 5px rgb(255, 255, 255, 0.3);
+      }
+
+      div.upset2 {
+        box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.1),
+          -3px -3px 5px rgb(255, 255, 255, 0.3),
+          inset -5px -5px 5px rgb(0, 0, 0, 0.1),
+          inset 5px 5px 5px rgb(255, 255, 255, 0.3);
+      }
+
+      div.downset2 {
+        box-shadow: 3px 3px 5px rgb(255, 255, 255, 0.3),
+          -3px -3px 5px rgb(0, 0, 0, 0.1),
+          inset -5px -5px 5px rgb(255, 255, 255, 0.3),
+          inset 5px 5px 5px rgb(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="downset1"></div>
+    <div class="upset1"></div>
+    <div class="upset2"></div>
+    <div class="downset2"></div>
+  </body>
+</html>
