@@ -4,21 +4,62 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>crome dino game</title>
-    <link rel="stylesheet" href="/style.css" />
+    <title>DT Robo Jump || A browser game</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div id="main_banner">
+      <h1>DT Robo Jump</h1>
+      <div id="startBtn">Start Playing</div>
+    </div>
+    <div id="game_over_banner">
+      <h1>Game Over</h1>
+      <div id="playAgainBtn">Play Again</div>
+    </div>
     <div id="main_cont">
+      <div id="score_cont">
+        <h1 id="main_score">Score : <span id="score">0</span></h1>
+        <div id="other_score">
+          <h2 id="main_level">Game level : <span id="level">1</span></h2>
+        </div>
+      </div>
       <div id="main_game_cont">
         <div id="sky_cont"></div>
-        <div id="dino"></div>
+        <div id="character"></div>
+        <div id="hill_cont">
+          <div class="hill" id="hill_1"></div>
+          <div class="hill" id="hill_2"></div>
+          <div class="hill" id="hill_3"></div>
+        </div>
+        <div id="far_tree_cont">
+          <div id="far_tree_back"></div>
+          <div class="far_tree" id="far_tree_1"></div>
+          <div class="far_tree" id="far_tree_2"></div>
+        </div>
+        <div id="tree_cont">
+          <div class="tree back" id="tree_1"></div>
+          <div class="tree back" id="tree_2"></div>
+          <div class="tree back" id="tree_3"></div>
+          <div class="tree back" id="tree_4"></div>
+          <div class="tree back" id="tree_5"></div>
+          <div class="tree front" id="tree_6"></div>
+          <div class="tree front" id="tree_7"></div>
+          <div class="tree front" id="tree_8"></div>
+          <div class="tree front" id="tree_9"></div>
+          <div class="tree front" id="tree_10"></div>
+        </div>
         <div id="obstakles_cont">
           <div id="obstakle_1" class="obstakles"></div>
-          <div id="obstakle_1" class="obstakles"></div>
+          <div id="obstakle_2" class="obstakles"></div>
+        </div>
+        <div id="grass_cont">
+          <div id="grass_back"></div>
+          <div class="grass" id="grass_1"></div>
+          <div class="grass" id="grass_2"></div>
         </div>
       </div>
       <div id="earth_cont"></div>
     </div>
-    <script src="/main.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>

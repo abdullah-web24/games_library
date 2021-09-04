@@ -8,15 +8,95 @@ body {
   width: 100vw;
   overflow: hidden;
 }
+
+#main_banner,
+#game_over_banner {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#main_banner {
+  z-index: 5;
+}
+#game_over_banner {
+  z-index: -5;
+}
+#main_banner.gameStarted {
+  z-index: -5;
+}
+#game_over_banner.gameFinish {
+  z-index: 5;
+}
+#main_banner h1,
+#game_over_banner h1 {
+  font-size: 6rem;
+  color: white;
+}
+#startBtn,
+#playAgainBtn {
+  font-size: 1.6rem;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 210, 0);
+  padding: 1rem 3rem;
+  cursor: pointer;
+  border: none;
+  margin-top: 80px;
+  border-radius: 5px;
+}
+#startBtn:hover,
+#playAgainBtn:hover {
+  background-color: rgb(250, 255, 95);
+}
+
 #main_cont {
   height: 100%;
   width: 100%;
-  background-color: rgb(49, 49, 49);
+  position: relative;
 }
+
+#score_cont {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  z-index: 5;
+  display: flex;
+  opacity: 0;
+  color: white;
+}
+#score_cont.gameStarted {
+  opacity: 1;
+}
+#main_score {
+  font-size: 2rem;
+  text-align: center;
+}
+#score {
+  display: block;
+  font-size: 5rem;
+  color: rgb(255, 210, 0);
+  text-shadow: 3px 3px 0px black;
+}
+#main_level {
+  font-size: 2rem;
+  text-align: center;
+  margin-left: 50px;
+}
+#level {
+  color: rgb(255, 210, 0);
+}
+
 #main_game_cont {
-  height: 60%;
+  height: 70%;
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 #sky_cont {
   height: 100%;
@@ -24,36 +104,214 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgb(92, 181, 255);
+  background-color: rgb(90, 180, 255);
 }
-#dino {
+#character {
   height: 150px;
   width: 75px;
-  background-color: rgb(10, 190, 64);
-  border-radius: 50px;
+  background-image: url("./img/robot.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+  opacity: 0;
   position: absolute;
   bottom: 0;
-  left: 200px;
+  left: 10%;
+  z-index: 2;
+  transition: transform 500ms, background-image 100ms;
+}
+#character.gameStarted {
+  opacity: 1;
+}
+
+#grass_cont {
+  height: 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   z-index: 2;
 }
+.grass {
+  height: 100%;
+  width: 100%;
+  background: url("./img/grass_2.svg");
+  background-size: contain;
+  position: absolute;
+}
+#grass_back {
+  height: 6px;
+  width: 100%;
+  background-color: rgb(94, 226, 154);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#far_tree_cont {
+  height: 150px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  /* filter: blur(4px) brightness(0.8); */
+}
+.far_tree {
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  background: url("./img/far_tree.svg");
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+}
+#far_tree_back {
+  height: 80px;
+  width: 100%;
+  background-color: rgb(0, 100, 89);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#hill_cont,
+#tree_cont,
 #obstakles_cont {
   width: 100%;
-  height: 150px;
-  background-color: rgba(36, 36, 36, 0.329);
   position: absolute;
   bottom: 0;
   z-index: 1;
 }
+#hill_cont {
+  height: 500px;
+}
+.hill {
+  height: 100%;
+  width: 700px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.hill:nth-child(1) {
+  height: 100%;
+  background-image: url("./img/hill_1.svg");
+  /* filter: brightness(1.5) blur(7px); */
+}
+.hill:nth-child(2) {
+  height: 80%;
+  background-image: url("./img/hill_2.svg");
+  /* filter: blur(6px); */
+}
+.hill:nth-child(3) {
+  height: 90%;
+  background-image: url("./img/hill_1.svg");
+  /* filter: brightness(0.7) blur(5px); */
+}
+
+#tree_cont {
+  height: 300px;
+}
+.tree {
+  height: 100%;
+  width: 300px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+/* .tree.front {
+  filter: blur(1px);
+}
+.tree.back {
+  filter: brightness(0.5) blur(3px);
+} */
+.tree:nth-child(1) {
+  height: 100%;
+  background-image: url("./img/tree_1.svg");
+}
+.tree:nth-child(2) {
+  height: 80%;
+  background-image: url("./img/tree_2.svg");
+}
+.tree:nth-child(3) {
+  height: 90%;
+  background-image: url("./img/tree_3.svg");
+}
+.tree:nth-child(4) {
+  height: 60%;
+  background-image: url("./img/tree_4.svg");
+}
+.tree:nth-child(5) {
+  height: 100%;
+  background-image: url("./img/tree_5.svg");
+}
+.tree:nth-child(6) {
+  height: 70%;
+  background-image: url("./img/tree_1.svg");
+}
+.tree:nth-child(7) {
+  height: 90%;
+  background-image: url("./img/tree_2.svg");
+}
+.tree:nth-child(8) {
+  height: 100%;
+  background-image: url("./img/tree_3.svg");
+}
+.tree:nth-child(9) {
+  height: 70%;
+  background-image: url("./img/tree_4.svg");
+}
+.tree:nth-child(10) {
+  height: 60%;
+  background-image: url("./img/tree_5.svg");
+}
+
+#obstakles_cont {
+  height: 150px;
+}
 .obstakles {
   height: 50px;
   width: 50px;
-  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background: url("./img/obstakles.svg");
+  background-size: 100%;
   position: absolute;
   bottom: 0;
+  right: 0;
+  transform: translateX(100%);
+  display: block;
+  /* box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.6); */
 }
 
 #earth_cont {
-  height: 40%;
+  height: 30%;
   width: 100%;
-  background-color: rgb(77, 19, 2);
+  background-color: rgb(50, 20, 10);
+}
+
+#character.character_jump {
+  background-image: url("./img/robot_jump.svg");
+  animation: character_jump 800ms cubic-bezier(0.5, -0.1, 0.5, 0.5) 1 both;
+}
+@keyframes character_jump {
+  0% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(-140%);
+  }
+  65% {
+    transform: translateY(-150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
