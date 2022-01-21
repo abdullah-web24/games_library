@@ -398,6 +398,8 @@ playAgainBtn.addEventListener("click", function () {
   }, 1000);
 });
 
+character_jump();
+
 // ------------
 // ------------- Jumping functions -------
 let keyUped = true;
