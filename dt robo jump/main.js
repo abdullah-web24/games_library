@@ -409,6 +409,10 @@ window.addEventListener("keydown", function (e) {
     }
   }
 });
-window.addEventListener("keyup", function (e) {
+window.addEventListener("keyup", function () {
   keyUped = true;
+});
+
+window.addEventListener("pointerdown", function () {
+  character_jump();
 });
